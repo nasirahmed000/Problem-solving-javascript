@@ -1,4 +1,4 @@
-const names = ['Baul','kaul','caul','daul','maul', 'Baul ', 'caul']
+const names = ['Baul','kaul','caul','daul','maul', 'Baul ', 'caul'];
 
 function removeDuplicate(names){
     const unique = [];
@@ -17,7 +17,7 @@ console.log(uniqueNames);
 
 
 
-
+// another one eg
 
 let arr = [1, 2, 3, 2, 4, 3];
 
