@@ -12,7 +12,7 @@ console.log(typeof null); // "object" (Note: this is a known bug in JavaScript)
 console.log(typeof [1, 2, 3]); // "object"
 console.log(typeof { name: "John", age: 30 }); // "object"
 console.log(typeof function () {}); // "function"
-
+console.log(typeof 412) ;
 
 // concat 
 
