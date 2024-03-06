@@ -5,3 +5,10 @@ console.log(greeting);
 
 console.log(greeting.trim());
 // Expected output: "Hello world!";
+
+
+// Using trim()
+// The following example trims whitespace from both ends of str.
+
+const str = "   foo  ";
+console.log(str.trim()); // 'foo'
