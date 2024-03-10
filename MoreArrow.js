@@ -1,3 +1,11 @@
+const materials = ['Hydrogen', 'Helium', 'Lithium', 'Beryllium'];
+
+console.log(materials.map((material) => material.length));
+// Expected output: Array [8, 6, 7, 9]
+
+
+
+
 const add = (first , second ) => first + second ;
 const getFullName = (first , second) => first + "" + second;
 const multiply = (a,b) => a*b;
