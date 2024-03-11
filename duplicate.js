@@ -27,3 +27,15 @@ let uniqueArr = arr.filter((item, index) => {
 
 console.log(uniqueArr); 
 // Output: [1, 2, 3, 4]
+
+
+
+
+let arr = [1, 2, 3, 2, 4, 3];
+
+let uniqueArr = arr.filter((item, index) => {
+  return arr.indexOf(item) === index;
+});
+
+console.log(uniqueArr); 
+// Output: [1, 2, 3, 4]
