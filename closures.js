@@ -61,3 +61,16 @@ console.log(obj1.name + " is "+ "awesome");
 
 // This ability of a function to store a variable for further reference even after it is executed is called Closure.
 
+
+
+
+
+function init() {
+  var name = "Mozilla"; // name is a local variable created by init
+  function displayName() {
+    // displayName() is the inner function, that forms the closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
