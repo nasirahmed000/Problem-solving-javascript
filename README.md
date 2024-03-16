@@ -1,5 +1,5 @@
 ﻿# Problem-solving-javascript
 
-Here I Practice everyday , core concept and javascript problem solving which is very helpfull for my logic building !!
-
-Thanks !
+I practice every day, focusing on core concepts and solving JavaScript problems. 
+This helps me greatly in building my logical thinking skills.
+Thank you!
