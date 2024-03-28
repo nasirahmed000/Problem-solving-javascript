@@ -1,23 +1,33 @@
-// eg 1
+
+// Variables Hoisting
+console.log(myVar); // undefined, due to hoisting
+var myVar = 5;
 
 
-<p id="demo"></p>
+##
+// Functions Hoisting
+console.log(myLet); // ReferenceError: Cannot access 'myLet' before initialization
+let myLet = 5;
 
-<script>
-x = 5; // Assign 5 to x
+// function expressions
+hello(); // "Hello, world!"
 
-elem = document.getElementById("demo"); // Find an element 
-elem.innerHTML = x;           // Display x in the element
+function hello() {
+    console.log("Hello, world!");
+}
 
-var x; // Declare x
-</script>
 
-// eg 2 
-  
-<script>
-var x; // Declare x
-x = 5; // Assign 5 to x
+hello(); // TypeError: hello is not a function
 
-elem = document.getElementById("demo"); // Find an element 
-elem.innerHTML = x;           // Display x in the element
-</script>
+var hello = function() {
+    console.log("Hello, world!");
+};
+
+
+
+
+
+
+
+
+
