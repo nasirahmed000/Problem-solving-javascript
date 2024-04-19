@@ -69,6 +69,7 @@ function isPrime(num) {
 
 console.log(isPrime(7)); // Output: true
 
+6. Array
 
 
 // //regards 
