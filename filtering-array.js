@@ -24,13 +24,43 @@ function filterAdultUsers(users) {
 filterAdultUsers(users);
 
 
-
 // Array.prototype.filter(): This method creates a new array with all elements that pass the test implemented by the provided function. In this case, it tests whether a user's age is greater than or equal to 18.
 
 // Array.prototype.forEach(): This method executes a provided function once for each array element. Here, it's used to print the name of each user in the filtered array.
 
 
 
+// practice problem 2
+
+let obj = {
+	'Students': [{
+		"name": "Raj",
+		"Age": "15",
+		"RollNumber": "123",
+		"Marks": "99",
+
+	}, {
+		"name": "Aman",
+		"Age": "14",
+		"RollNumber": "223",
+		"Marks": "69",
+	},
+	{
+		"name": "Vivek",
+		"Age": "13",
+		"RollNumber": "253",
+		"Marks": "89",
+	},
+	]
+};
+
+let newArray = obj.Students.filter(function (el) {
+	return el.Age >= 15 &&
+		el.RollNumber <= 200 &&
+		el.Marks >= 80;
+}
+);
+console.log(newArray);
 
 
 
