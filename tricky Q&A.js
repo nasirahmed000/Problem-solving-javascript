@@ -167,3 +167,16 @@ for (var i = 0; i < 5; i++) {
         }, 1000);
     })(i);
 }
+
+// 16. var,let,const differences 
+
+// ans: 
+// var: Function-scoped, hoisted, can be redeclared and reassigned.
+// let: Block-scoped, hoisted but with temporal dead zone, can be reassigned but not redeclared.
+// const: Block-scoped, hoisted but with temporal dead zone, cannot be reassigned or redeclared, though its properties can be mutated.
+
+17.
+
+
+
+
