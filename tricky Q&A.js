@@ -175,7 +175,203 @@ for (var i = 0; i < 5; i++) {
 // let: Block-scoped, hoisted but with temporal dead zone, can be reassigned but not redeclared.
 // const: Block-scoped, hoisted but with temporal dead zone, cannot be reassigned or redeclared, though its properties can be mutated.
 
-17.
+Here are more tricky JavaScript interview questions, focusing on different concepts:
+
+
+
+// 17. NaN Comparison
+
+javascriptCopyconsole.log(typeof NaN);
+console.log(NaN === NaN);
+console.log(Object.is(NaN, NaN));
+
+// What will be logged?
+Answer:
+
+"number" (NaN is a special number value)
+false (NaN is never equal to itself)
+true (Object.is correctly identifies NaN equality)
+
+
+Function Arguments
+
+javascriptCopyfunction sum(x, y) {
+    if (y === undefined) {
+        return function(y) { return x + y; }
+    }
+    return x + y;
+}
+
+console.log(sum(2,3));
+console.log(sum(2)(3));
+
+18 // What will be logged?
+Answer: Both log 5
+
+Example of currying
+Returns either direct sum or partially applied function
+
+
+Destructuring Gotcha
+
+javascriptCopyconst { a: x = 1 } = {};
+console.log(x);
+console.log(a);
+
+19 // What happens?
+Answer:
+
+x is 1 (default value)
+ReferenceError: a is not defined
+a:x renames the property during destructuring
+
+
+Async/Await Error Handling
+
+javascriptCopyasync function fetchData() {
+    try {
+        const promise = Promise.reject('error');
+        const data = await promise;
+        return data;
+    } catch(e) {
+        return 'caught';
+    } finally {
+        return 'finally';
+    }
+}
+
+fetchData().then(console.log);
+
+20 // What will be logged?
+Answer: 'finally'
+
+finally block's return overrides previous returns
+Be careful with returns in finally blocks
+
+
+Function Name Property
+
+javascriptCopyconst foo = function bar() {
+    console.log(foo.name);
+    console.log(bar.name);
+};
+
+foo();
+
+21 // What happens?
+Answer:
+
+First log shows "bar"
+Second throws ReferenceError
+Named function expressions create name that's only visible within function
+
+
+Object Property Order
+
+javascriptCopyconst obj = {
+    999: 'numeric',
+    foo: 'string',
+    '100': 'numeric',
+    bar: 'string',
+    [Symbol()]: 'symbol'
+};
+
+console.log(Object.keys(obj));
+
+22 // What is the order?
+Answer: ['100', '999', 'foo', 'bar']
+
+Numeric keys are sorted
+String keys appear in insertion order
+Symbol keys are not included in Object.keys
+
+
+Promise Chain
+
+javascriptCopyPromise.resolve(1)
+    .then(x => { throw x; })
+    .then(x => console.log(`then ${x}`))
+    .catch(err => {
+        console.log(`catch ${err}`);
+        return 'caught';
+    })
+    .then(x => console.log(`then ${x}`));
+
+23 // What is the output sequence?
+Answer:
+
+catch 1
+then caught
+Catch handler returns value that continues down success path
+
+
+Generator Functions
+
+javascriptCopyfunction* gen() {
+    yield 1;
+    return 2;
+    yield 3;
+}
+
+const iterator = gen();
+console.log([...iterator]);
+
+24 // What will be logged?
+Answer: [1]
+
+Spread operator only collects yielded values
+Return value is ignored
+Code after return is unreachable
+
+
+Object Property Shadowing
+
+javascriptCopyconst proto = {
+    prop: 'prototype'
+};
+
+const obj = {
+    __proto__: proto,
+    get prop() {
+        return 'getter';
+    }
+};
+
+console.log(obj.prop);
+delete obj.prop;
+console.log(obj.prop);
+
+25 // What will be logged?
+Answer:
+
+'getter'
+'prototype'
+After deletion, falls back to prototype chain
+
+
+Array Methods with Sparse Arrays
+
+javascriptCopyconst arr = Array(3);
+arr[1] = 2;
+console.log(arr.map(x => x || 0));
+console.log(arr.filter(x => x !== undefined));
+console.log(arr.reduce((a, b) => a + (b || 0), 0));
+
+26 // What will be logged?
+Answer:
+
+[0, 2, 0] (map visits all positions)
+[2] (filter skips empty slots)
+2 (reduce skips empty slots)
+
+These questions test understanding of:
+
+Promise behavior and error handling
+Generator functions
+Object property descriptors
+Prototype chain
+Array methods with sparse arrays
+Function scoping and naming
 
 
 
