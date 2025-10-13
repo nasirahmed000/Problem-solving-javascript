@@ -30,7 +30,9 @@ promise.then((message) => {
     console.log(message); // Output: Data received
 
 
-// Asynchronous coding is a fundamental concept in JavaScript that allows tasks to be executed without blocking the main thread of execution. This enables JavaScript programs to handle time-consuming operations like network requests, file I/O, and complex calculations without freezing the user interface.
+// Asynchronous coding is a fundamental concept in JavaScript that allows tasks to be executed without  
+    //blocking the main thread of execution. This enables JavaScript programs to handle time-consuming operations 
+    // like network requests, file I/O, and complex calculations without freezing the user interface.
 
 // Key Concepts:
 
